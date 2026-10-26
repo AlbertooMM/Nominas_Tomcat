@@ -68,17 +68,6 @@
             3. Modificar datos de un empleado
         </a>
 
-        <a href="<%= request.getContextPath() %>/views/recalcular-sueldo.jsp">
-            4. Recalcular sueldo de un empleado
-        </a>
-
-        <a href="<%= request.getContextPath() %>/nominas?accion=recalcularTodos">
-            5. Recalcular todos los sueldos
-        </a>
-
-        <a href="<%= request.getContextPath() %>/nominas?accion=backup">
-            6. Realizar copia de seguridad
-        </a>
     </div>
 </div>
 </body>
