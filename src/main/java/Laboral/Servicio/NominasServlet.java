@@ -20,7 +20,7 @@ public class NominasServlet extends HttpServlet {
     private NominasDao nominasDao;
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         empleadoDao = new EmpleadoDao();
         nominasDao = new NominasDao();
     }
