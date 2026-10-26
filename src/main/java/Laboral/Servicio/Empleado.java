@@ -93,11 +93,9 @@ public class Empleado extends Persona {
         System.out.println("Años trabajados: " + anyos);
     }
     public boolean actualizar(EmpleadoModel empleado) {
-        String sql = """
-                UPDATE Empleados
-                SET nombre = ?, sexo = ?, categoria = ?, anyos = ?
-                WHERE dni = ?
-                """;
+        String sql = "UPDATE Empleados\n" +
+                     "SET nombre = ?, sexo = ?, categoria = ?, anyos = ?\n" +
+                     "WHERE dni = ?\n";
 
         try (Connection con = ConexionDb.getConexion();
              PreparedStatement ps = con.prepareStatement(sql)) {
