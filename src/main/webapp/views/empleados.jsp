@@ -95,9 +95,8 @@
 
     <% } %>
 
-    <a class="volver"
-       href="${pageContext.request.contextPath}/index.jsp">
-        ← Volver al menú principal
+    <a href="<%= request.getContextPath() %>/index.jsp">
+        Volver al menú
     </a>
 </div>
 </body>

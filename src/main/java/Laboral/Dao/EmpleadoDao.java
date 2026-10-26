@@ -12,36 +12,46 @@ import java.util.List;
 public class EmpleadoDao {
 
 
+
     public List<EmpleadoModel> obtenerTodos() {
+        List<EmpleadoModel> empleados = new ArrayList<>();
 
-        List<EmpleadoModel> listaEmpleados = new ArrayList<>();
+        String sql = "SELECT nombre, dni, sexo, categoria, anyos FROM empleados";
 
-        String sql = "SELECT nombre, dni, sexo, categoria, anyos\n" +
-                     "FROM Empleados\n";
+        try (Connection con = ConexionDb.getConexion()) {
 
-        try (Connection con = ConexionDb.getConexion();
-             PreparedStatement ps = con.prepareStatement(sql);
-             ResultSet rs = ps.executeQuery()) {
-
-            while (rs.next()) {
-
-                EmpleadoModel empleado = new EmpleadoModel(
-                        rs.getString("nombre"),
-                        rs.getString("dni"),
-                        rs.getString("sexo").charAt(0),
-                        rs.getInt("categoria"),
-                        rs.getInt("anyos")
-                );
-
-                listaEmpleados.add(empleado);
+            if (con == null) {
+                throw new SQLException("La conexión con la base de datos es null");
             }
 
+            System.out.println("Base de datos conectada: "
+                    + con.getCatalog());
+
+            try (PreparedStatement ps = con.prepareStatement(sql);
+                 ResultSet rs = ps.executeQuery()) {
+
+                while (rs.next()) {
+                    EmpleadoModel empleado = new EmpleadoModel();
+
+                    empleado.setNombre(rs.getString("nombre"));
+                    empleado.setDni(rs.getString("dni"));
+                    empleado.setSexo(rs.getString("sexo").charAt(0));
+                    empleado.setCategoria(rs.getInt("categoria"));
+                    empleado.setAnyos(rs.getInt("anyos"));
+
+                    empleados.add(empleado);
+                }
+            }
+
+            System.out.println("Empleados encontrados: " + empleados.size());
+
         } catch (SQLException e) {
-            System.out.println("Error al consultar empleados: "
-                    + e.getMessage());
+            System.err.println("Error al obtener empleados:");
+            e.printStackTrace();
+            throw new RuntimeException("No se pudieron obtener los empleados", e);
         }
 
-        return listaEmpleados;
+        return empleados;
     }
 
     /**

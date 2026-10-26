@@ -29,6 +29,10 @@ public class EmpleadoModel {
         this.anyos = anyos;
     }
 
+    public EmpleadoModel() {
+
+    }
+
     public String getNombre() {
         return nombre;
     }

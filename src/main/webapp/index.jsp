@@ -56,27 +56,27 @@
     <p>Selecciona la operación que deseas realizar.</p>
 
     <div class="menu">
-        <a href="${pageContext.request.contextPath}/nominas?accion=listar">
+        <a href="<%= request.getContextPath() %>/nominas?accion=listar">
             1. Mostrar todos los empleados
         </a>
 
-        <a href="${pageContext.request.contextPath}/views/consultar-salario.jsp">
+        <a href="<%= request.getContextPath() %>/views/consultar-salario.jsp">
             2. Consultar salario de un empleado
         </a>
 
-        <a href="${pageContext.request.contextPath}/views/modificar-empleado.jsp">
+        <a href="<%= request.getContextPath() %>/views/modificar-empleado.jsp">
             3. Modificar datos de un empleado
         </a>
 
-        <a href="${pageContext.request.contextPath}/nominas?accion=formularioRecalcular">
+        <a href="<%= request.getContextPath() %>/views/recalcular-sueldo.jsp">
             4. Recalcular sueldo de un empleado
         </a>
 
-        <a href="${pageContext.request.contextPath}/nominas?accion=recalcularTodos">
-            5. Recalcular sueldos de todos los empleados
+        <a href="<%= request.getContextPath() %>/nominas?accion=recalcularTodos">
+            5. Recalcular todos los sueldos
         </a>
 
-        <a href="${pageContext.request.contextPath}/nominas?accion=backup">
+        <a href="<%= request.getContextPath() %>/nominas?accion=backup">
             6. Realizar copia de seguridad
         </a>
     </div>

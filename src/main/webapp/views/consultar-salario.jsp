@@ -19,6 +19,7 @@
             background: white;
             padding: 30px;
             border-radius: 12px;
+            box-shadow: 0 5px 20px #00000012;
         }
 
         h1 { color: #1d4ed8; }
@@ -42,7 +43,8 @@
             cursor: pointer;
         }
 
-        .volver { display: block; margin-top: 20px; }
+        .volver { display: block; margin-top: 20px; text-decoration: none; color: #2563eb; }
+        .volver:hover { text-decoration: underline; }
     </style>
 </head>
 
@@ -50,21 +52,17 @@
 <div class="contenedor">
     <h1>Consultar salario</h1>
 
-    <form action="${pageContext.request.contextPath}/nominas"
-          method="post">
-
+    <form action="<%= request.getContextPath() %>/nominas" method="post">
         <input type="hidden" name="accion" value="consultarSalario">
 
         <label for="dni">DNI del empleado</label>
-        <input type="text" id="dni" name="dni"
-               maxlength="20" required>
+        <input type="text" id="dni" name="dni" maxlength="20" required>
 
         <button type="submit">Consultar salario</button>
     </form>
 
-    <a class="volver"
-       href="${pageContext.request.contextPath}/index.jsp">
-        ← Volver al menú
+    <a class="volver" href="<%= request.getContextPath() %>/index.jsp">
+        Volver al menú
     </a>
 </div>
 </body>

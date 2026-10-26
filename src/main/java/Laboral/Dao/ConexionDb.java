@@ -1,3 +1,4 @@
+
 package Laboral.Dao;
 
 import java.sql.Connection;
@@ -5,21 +6,27 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConexionDb {
-    /** URL de conexión a la base de datos MariaDB */
-    private static final String URL = "jdbc:mariadb://localhost:3306/GestionNomina";
-    /** Usuario de la base de datos */
+
+    private static final String URL =
+            "jdbc:mariadb://localhost:3306/gestionnomina";
+
     private static final String USER = "root";
-    /** Contraseña de la base de datos */
-    private static final String PASS = "123456"; // Cambiar por tu contraseña
+    private static final String PASS = "123456";
 
-    public static Connection getConexion() {
 
+    public static Connection getConexion() throws SQLException {
         try {
-            return DriverManager.getConnection(URL, USER, PASS);
-        } catch (SQLException e) {
-            System.out.println("Error al conectar con la base de datos");
-            return null;
+            Class.forName("org.mariadb.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new SQLException(
+                    "No se encuentra el controlador JDBC de MariaDB. "
+                            + "Comprueba la dependencia Maven y el despliegue.",
+                    e
+            );
         }
 
+        return DriverManager.getConnection(URL, USER, PASS);
     }
+
 }
+
