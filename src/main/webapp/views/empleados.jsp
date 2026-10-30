@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Listado de empleados</title>
 
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -44,11 +45,6 @@
         th { background: #2563eb; color: white; }
         tr:nth-child(even) { background: #f8fafc; }
 
-        .volver {
-            display: inline-block;
-            margin-top: 20px;
-            color: #2563eb;
-        }
     </style>
 </head>
 

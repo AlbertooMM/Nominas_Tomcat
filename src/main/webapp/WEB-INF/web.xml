@@ -1,16 +1,16 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <servlet>
-    <servlet-name>NominasServlet</servlet-name>
-    <servlet-class>Laboral.Servicio.NominasServlet</servlet-class>
-  </servlet>
+    <servlet>
+        <servlet-name>NominasServlet</servlet-name>
+        <servlet-class>Laboral.Controller.NominasServlet</servlet-class>
+    </servlet>
 
-  <servlet-mapping>
-    <servlet-name>NominasServlet</servlet-name>
-    <url-pattern>/nominas</url-pattern>
-  </servlet-mapping>
-  <display-name>Archetype Created Web Application</display-name>
+    <servlet-mapping>
+        <servlet-name>NominasServlet</servlet-name>
+        <url-pattern>/nominas</url-pattern>
+    </servlet-mapping>
+    <display-name>Archetype Created Web Application</display-name>
 </web-app>

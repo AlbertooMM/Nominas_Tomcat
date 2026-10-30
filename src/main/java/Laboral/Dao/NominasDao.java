@@ -2,6 +2,7 @@ package Laboral.Dao;
 
 import Laboral.Modelo.NominaModel;
 import Laboral.Modelo.EmpleadoModel;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,18 +10,12 @@ import java.util.List;
 
 public class NominasDao {
 
-    /**
-     * Inserta o actualiza la nómina de un empleado.
-     *
-     * @param nomina nómina a guardar
-     * @return true si la operación ha sido correcta
-     */
 
     public NominaModel buscarPorDni(String dni) {
 
         String sql = "SELECT dni, sueldo\n" +
-                     "FROM Nominas\n" +
-                     "WHERE dni = ?\n";
+                "FROM Nominas\n" +
+                "WHERE dni = ?\n";
 
         try (Connection con = ConexionDb.getConexion();
              PreparedStatement ps = con.prepareStatement(sql)) {
@@ -45,6 +40,7 @@ public class NominasDao {
 
         return null;
     }
+
     public boolean recalcularYActualizar(String dni) {
         // Fórmula estándar de sueldo basada en categoría y años trabajados (ejemplo típico)
         // Sueldo base según categoría + complemento por años (5000 * categoria + 1000 * anyos, por ejemplo)

@@ -1,4 +1,4 @@
-package Laboral.Servicio;
+package Laboral.Controller;
 
 import Laboral.Dao.EmpleadoDao;
 import Laboral.Dao.NominasDao;

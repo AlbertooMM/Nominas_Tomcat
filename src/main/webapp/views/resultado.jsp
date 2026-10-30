@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Resultado de la operación</title>
-
+    <link rel="stylesheet" href="./CSS/resultado.css">
     <style>
         body {
             font-family: Arial, sans-serif;
