@@ -51,18 +51,6 @@ public class NominasServlet extends HttpServlet {
                     modificarEmpleado(request, response);
                     break;
 
-                case "recalcular":
-                    recalcularSueldo(request, response);
-                    break;
-
-                case "recalcularTodos":
-                    recalcularTodosSueldos(request, response);
-                    break;
-
-                case "backup":
-                    realizarBackup(request, response);
-                    break;
-
                 default:
                     response.sendError(
                             HttpServletResponse.SC_NOT_FOUND,
@@ -138,22 +126,4 @@ public class NominasServlet extends HttpServlet {
         response.sendRedirect(request.getContextPath() + "/nominas?accion=listar");
     }
 
-    private void recalcularSueldo(HttpServletRequest request, HttpServletResponse response)
-            throws Exception {
-        String dni = request.getParameter("dni");
-        nominasDao.recalcularYActualizar(dni);
-        response.sendRedirect(request.getContextPath() + "/nominas?accion=listar");
-    }
-
-    private void recalcularTodosSueldos(HttpServletRequest request, HttpServletResponse response)
-            throws Exception {
-        nominasDao.recalcularTodos(empleadoDao);
-        response.sendRedirect(request.getContextPath() + "/nominas?accion=listar");
-    }
-
-    private void realizarBackup(HttpServletRequest request, HttpServletResponse response)
-            throws Exception {
-        // Aquí puedes añadir tu lógica de copia de seguridad o dejar la redirección
-        response.sendRedirect(request.getContextPath() + "/nominas?accion=listar");
-    }
 }
