@@ -5,49 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Gestión de Nóminas</title>
-
-    <style>
-        * { box-sizing: border-box; }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #f1f5f9;
-            margin: 0;
-            padding: 40px 20px;
-            color: #1e293b;
-        }
-
-        .contenedor {
-            max-width: 700px;
-            margin: auto;
-            background: white;
-            padding: 35px;
-            border-radius: 14px;
-            box-shadow: 0 5px 20px #00000012;
-        }
-
-        h1 { text-align: center; color: #1d4ed8; }
-        p { color: #64748b; }
-
-        .menu {
-            display: grid;
-            gap: 12px;
-            margin-top: 25px;
-        }
-
-        .menu a {
-            display: block;
-            padding: 16px;
-            border-radius: 8px;
-            background: #2563eb;
-            color: white;
-            text-decoration: none;
-            transition: background .2s;
-        }
-
-        .menu a:hover { background: #1d4ed8; }
-        .salir { background: #475569 !important; }
-    </style>
+    <link rel="stylesheet" href="./views/CSS/index.css">
 </head>
 
 <body>
