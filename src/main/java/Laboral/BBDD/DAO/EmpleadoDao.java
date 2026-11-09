@@ -1,5 +1,6 @@
-package Laboral.Dao;
+package Laboral.BBDD.DAO;
 
+import Laboral.BBDD.Conexion.ConexionDb;
 import Laboral.Modelo.EmpleadoModel;
 
 import java.sql.*;

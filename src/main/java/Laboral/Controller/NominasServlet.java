@@ -1,7 +1,7 @@
 package Laboral.Controller;
 
-import Laboral.Dao.EmpleadoDao;
-import Laboral.Dao.NominasDao;
+import Laboral.BBDD.DAO.EmpleadoDao;
+import Laboral.BBDD.DAO.NominasDao;
 import Laboral.Modelo.EmpleadoModel;
 import Laboral.Modelo.NominaModel;
 

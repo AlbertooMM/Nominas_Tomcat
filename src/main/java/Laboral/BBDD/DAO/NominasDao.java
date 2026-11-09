@@ -1,10 +1,10 @@
-package Laboral.Dao;
+package Laboral.BBDD.DAO;
 
+import Laboral.BBDD.Conexion.ConexionDb;
 import Laboral.Modelo.NominaModel;
 import Laboral.Modelo.EmpleadoModel;
 
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
 
 
