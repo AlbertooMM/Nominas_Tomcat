@@ -1,4 +1,4 @@
-package Laboral.Servicio;
+package Laboral.Exceptions;
 
 public class DatosNoCorrectosException extends RuntimeException {
     private String Message;
